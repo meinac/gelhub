@@ -9,6 +9,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'omniauth-github'
+gem "octokit", "~> 3.0"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

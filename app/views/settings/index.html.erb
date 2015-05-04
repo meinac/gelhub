@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Existing Repos
+    <%= link_to "Create New Setting", new_setting_path, {class: "btn btn-default", style: "margin-top: -7px; float: right;"} %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Repo</th>
+        <th>For</th>
+        <th>Labels Count</th>
+        <th>Keywords Count</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @settings.each.with_index(1) do |setting, index| %>
+        <tr>
+          <td><%= index %></td>
+          <td><%= setting.repository.full_name %></td>
+          <td><%= setting.for %></td>
+          <td><%= setting.labels.length %></td>
+          <td><%= setting.keywords.length %></td>
+          <td><%= link_to "Destroy", setting_path(setting), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
